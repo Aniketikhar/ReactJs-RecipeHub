@@ -1,0 +1,16 @@
+
+
+.heroes{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.cat-img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+.card-title {
+    text-align: center;
+}

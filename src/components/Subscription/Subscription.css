@@ -1,0 +1,23 @@
+
+
+.subscr{
+    background: #ffd7c9;
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+.sub-form{
+    background-color: white;
+
+}
+.sub-form input[type="submit"] {
+    background-color: orangered;
+    border: none;
+}
+.sub-form input[type="email"] {
+    border: none;
+    width: 78%;
+}
