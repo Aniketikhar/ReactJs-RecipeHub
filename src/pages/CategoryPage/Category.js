@@ -48,10 +48,9 @@ function CategoryRecipes() {
           <p>{categoryDescription}</p>
         </div>
       </div>
-      <div className="products position-relative container">
-        
-      <div className="row mt-5 g-3 g-md-1">
-      {recipes.map((recipe) => (
+      <div className="products container">
+        <div className="row mt-5 g-3 g-md-1">
+          {recipes.map((recipe) => (
             <div className="col-6 col-md-3 ">
               <Link to={`/recipes/${recipe.idMeal}`}>
                 <div className="card border-0 m-3 text-center">
@@ -62,7 +61,7 @@ function CategoryRecipes() {
                   />
                   <div className="card-body p-0">
                     <h5 className="text-decoration-none" key={recipe.idMeal}>
-                    {recipe.strMeal}
+                      {recipe.strMeal}
                     </h5>
                   </div>
                 </div>
@@ -70,7 +69,7 @@ function CategoryRecipes() {
             </div>
           ))}
         </div>
-        
+
         {/* <ul>
         {recipes.map((recipe) => (
           <li key={recipe.idMeal}>{recipe.strMeal}</li>

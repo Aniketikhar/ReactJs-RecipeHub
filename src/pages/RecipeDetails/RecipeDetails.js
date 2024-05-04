@@ -94,7 +94,7 @@ function RecipeDetails() {
                 <li >
                   {ingre.measure} {ingre.ingredient}
                 </li>
-                <hr style={{margin: '5px'}} />
+                <hr style={{margin: '5px', color: 'orange'}} />
                 </>
               );
             })}
