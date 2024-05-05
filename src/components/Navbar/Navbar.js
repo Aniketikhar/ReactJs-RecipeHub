@@ -72,8 +72,8 @@ const Navbar = () => {
               <a className="nav-link mx-2" href="/categories">
                 Categories
               </a>
-              <a className="nav-link mx-2" href="/blogs">
-                Favorite
+              <a className="nav-link mx-2" href="/About Us">
+                About Us
               </a>
             </div>
             {/* search */}

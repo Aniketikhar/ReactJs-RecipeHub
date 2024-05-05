@@ -9,7 +9,7 @@ const Varieties = () => {
         <h2 className="heroes">Super Delicious</h2>
         <div className="row">
           <div className="col-md-4">
-            <div className="card border-0 mb-5">
+            <div className="card border-0 mb-5" >
               <img src="assets/sup-del1.jpg" alt="" className="img-fluid" />
               <div className="card-body p-0">
                 <p className="m-0">
