@@ -72,8 +72,8 @@ const Navbar = () => {
               <a className="nav-link mx-2" href="/categories">
                 Categories
               </a>
-              <a className="nav-link mx-2" href="/About Us">
-                About Us
+              <a className="nav-link mx-2" href="https://www.linkedin.com/in/aniket-ikhar-119800294/" target="blank">
+                About
               </a>
             </div>
             {/* search */}

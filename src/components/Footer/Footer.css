@@ -3,3 +3,24 @@
 .footer {
     background-color: #e8e8e8;
 }
+
+.footer ul{
+    list-style: none;
+    padding-left: 0px;
+    color: grey !important;
+}
+
+footer li{
+    text-decoration: none;
+    /* color: grey; */
+}
+
+footer a{
+    text-decoration: none;
+    color: grey !important;
+}
+
+
+.link{
+    color: grey;
+}
