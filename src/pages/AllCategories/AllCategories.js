@@ -2,6 +2,7 @@ import React , { useState , useEffect} from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 const AllCategories = () => {
     const [categories, setCategories] = useState([]);
@@ -24,9 +25,10 @@ const AllCategories = () => {
   return (
     <div>
       <Navbar />
-      <div className="header-category p-5 container rounded-5">
-        <div className="category-content  text-center ">
-          <h2>
+      <div className="header-category  container">
+        <div className="category-content   ">
+          <img src="/assets/pexels-ella-olsson-572949-1640774.jpg" className='img-fluid' alt="banner" />
+          <h2 className='mt-3'>
            All Categories
           </h2>
           {/* <p>{categoryDescription}</p> */}
@@ -50,6 +52,7 @@ const AllCategories = () => {
             ))
         }
       </div>
+      <Footer />
     </div>
   )
 }

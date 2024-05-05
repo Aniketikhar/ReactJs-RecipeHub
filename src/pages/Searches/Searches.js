@@ -3,6 +3,7 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 
 function Searches() {
   const location = useLocation();
@@ -99,6 +100,7 @@ function Searches() {
 
         
       </div>
+      <Footer />
     </div>
   );
 }

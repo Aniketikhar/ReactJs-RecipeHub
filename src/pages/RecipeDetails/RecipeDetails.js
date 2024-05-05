@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import "./RecipeDetails.css";
+import Footer from "../../components/Footer/Footer";
 
 function RecipeDetails() {
   const { recipeId } = useParams();
@@ -20,6 +21,8 @@ function RecipeDetails() {
         console.error("Error fetching recipe details:", error.message);
       }
     };
+
+    window.scrollTo(0 , 0);
 
     fetchRecipeDetails();
   }, [recipeId]);
@@ -41,14 +44,11 @@ function RecipeDetails() {
     }
   }
 
-  
-
-  // AIzaSyCwWkhPqciZj0H886w7juiv3Zcr9JqKsT4
   return (
     <div>
       <Navbar />
 
-      <div className="container mt-5 details-recipe">
+      <div className="container my-5 details-recipe">
         {/* <div className="img-contain text-center">
          
         </div> */}
@@ -75,56 +75,55 @@ function RecipeDetails() {
         </div>
         <hr />
 
-        <div className="text-center">
-          <img
-            src={recipe.strMealThumb}
-            alt={recipe.strMeal}
-            width={700}
-            height={500}
-            className=""
-          />
-        </div>
-        <div className="row mt-5">
+        <div className=" row">
+          <div className="col-8">
+            <img
+              src={recipe.strMealThumb}
+              alt={recipe.strMeal}
+              
+              className="recipe-thumb"
+            />
+          </div>
           <div className="col-4">
             <h3>Ingredients</h3>
-          <ul type='none' style={{paddingLeft: '0px'}}>
-            {Ingredients.map((ingre) => {
-              return (
-                <>
-                <li >
-                  {ingre.measure} {ingre.ingredient}
-                </li>
-                <hr style={{margin: '5px', color: 'orange'}} />
-                </>
-              );
-            })}
+            <ul type="none" style={{ paddingLeft: "0px" }}>
+              {Ingredients.map((ingre) => {
+                return (
+                  <>
+                    <li>
+                      {ingre.measure} {ingre.ingredient}
+                    </li>
+                    <hr style={{ margin: "5px", color: "orange" }} />
+                  </>
+                );
+              })}
             </ul>
           </div>
-          <div className="col-8">
-            <iframe
-              title="YouTube Video"
-              width="600"
-              height="300"
-              src={`https://www.youtube.com/embed/${
-                recipe.strYoutube.split("=")[1]
-              }`}
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-
-            <h3 className="mt-4">Instructions</h3>
-            <div className="instruct-list">
-              <ul>
-                {/* Render steps */}
-                {steps.map((step, index) => (
-                  <li key={index}>{step}</li>
-                ))}
-              </ul>
-            </div>
+        </div>
+        <div className=" m-5">
+          <h3 className="mt-4">Instructions</h3>
+          <div className="instruct-list">
+            <ul>
+              {/* Render steps */}
+              {steps.map((step, index) => (
+                <li key={index}>{step}</li>
+              ))}
+            </ul>
           </div>
         </div>
+        <iframe
+          title="YouTube Video"
+          width="900"
+          height="500"
+          src={`https://www.youtube.com/embed/${
+            recipe.strYoutube.split("=")[1]
+          }`}
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
+      <Footer />
     </div>
   );
 }

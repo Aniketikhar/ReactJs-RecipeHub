@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import "./Category.css";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 
 function CategoryRecipes() {
   const { categoryName } = useParams();
@@ -40,9 +41,10 @@ function CategoryRecipes() {
       <div className="position-relative">
         <Navbar />
       </div>
-      <div className="header-category p-5 container rounded-5">
+      <div className="header-category container ">
         <div className="category-content  ">
-          <h2>
+        <img src="/assets/pexels-ella-olsson-572949-1640774.jpg" className='img-fluid' alt="banner" />
+          <h2 className="mt-3">
             {categoryName} ({recipes.length} recipes)
           </h2>
           <p>{categoryDescription}</p>
@@ -76,6 +78,7 @@ function CategoryRecipes() {
         ))}
         </ul> */}
       </div>
+      <Footer />
     </div>
   );
 }
