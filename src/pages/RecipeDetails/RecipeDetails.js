@@ -4,11 +4,13 @@ import { useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import "./RecipeDetails.css";
 import Footer from "../../components/Footer/Footer";
+import { useTheme } from "../../contexts/Theme";
 
 function RecipeDetails() {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState(null);
   const Ingredients = [];
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const fetchRecipeDetails = async () => {
@@ -45,7 +47,7 @@ function RecipeDetails() {
   }
 
   return (
-    <div>
+    <div className={isDarkMode? " bg-dark text-white" : " "}>
       <Navbar />
 
       <div className="container my-5 details-recipe">
@@ -106,7 +108,7 @@ function RecipeDetails() {
             <ul>
               {/* Render steps */}
               {steps.map((step, index) => (
-                <li key={index}>{step}</li>
+                <li key={index} className={isDarkMode? "text-white" : " "}>{step}</li>
               ))}
             </ul>
           </div>

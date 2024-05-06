@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import './Categories.css';
+import { useTheme } from '../../contexts/Theme';
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -24,12 +26,12 @@ const Categories = () => {
   return (
     <div>
       <div className="sup-del container mb-5">
-        <h2 className="heroes">Popular Categories</h2>
-        <div className="row g-3 g-md-1">
+        <h2 className={isDarkMode? "text-white": "heroes"}>Popular Categories</h2>
+        <div className="row mt-4 g-3 g-md-1">
           {categories.map((category) => (
             <div className="col-6 col-md-2 ">
               <Link to={`/categories/${category.strCategory}`}>
-                <div className="card border-0 text-center">
+                <div className={isDarkMode? "card border-0 text-center bg-dark text-white": "card border-0 text-center "}>
                   <img
                     src={category.strCategoryThumb}
                     alt=""

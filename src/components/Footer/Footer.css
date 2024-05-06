@@ -4,6 +4,11 @@
     background-color: #e8e8e8;
 }
 
+.footer-dark {
+    background-color: #3a3a3a !important;
+    color: white !important;
+}
+
 .footer ul{
     list-style: none;
     padding-left: 0px;
@@ -22,5 +27,5 @@ footer a{
 
 
 .link{
-    color: grey;
+    color: rgb(161, 159, 159);
 }

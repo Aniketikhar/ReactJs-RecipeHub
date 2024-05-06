@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./Footer.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useTheme } from "../../contexts/Theme";
 
 const Footer = () => {
   const [categories, setCategories] = useState([]);
+  const { isDarkMode} = useTheme();
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -21,7 +23,7 @@ const Footer = () => {
     fetchCategories();
   }, []);
   return (
-    <div className="footer">
+    <div className={isDarkMode? "footer-dark footer":"footer"}>
       <div className="row container mx-auto ">
         <div className="col-5 p-3">
           <div className="f-logo">
@@ -32,7 +34,7 @@ const Footer = () => {
               alt="logo"
             />
           </div>
-          <p className="link">
+          <p className={isDarkMode? "link text-white": "link"}>
             RecipeHub is your ultimate culinary companion, offering a vast
             collection of recipes to inspire your next culinary adventure. Let's
             cook, create, and savor the flavors of life together!
@@ -105,10 +107,10 @@ const Footer = () => {
             <i className="fa-brands fa-linkedin p-3 fs-4"></i>
           </a>
           <a className="link" href="https://github.com/Aniketikhar" target="blank">
-            <i class="fa-brands fa-square-github p-3 fs-4"></i>
+            <i className="fa-brands fa-square-github p-3 fs-4"></i>
           </a>
           <a className="link" href="https://www.instagram.com/aniket_ikhar/" target="blank">
-            <i class="fa-brands fa-square-instagram p-3 fs-4"></i>
+            <i className="fa-brands fa-square-instagram p-3 fs-4"></i>
           </a>
         </span>
       </div>

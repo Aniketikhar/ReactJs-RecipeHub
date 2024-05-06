@@ -3,6 +3,13 @@
 .subscr{
     background: #ffd7c9;
 }
+.subscr-dark{
+    background: #641900 !important;
+    color: white !important;
+}
+.placeholder-dark::placeholder {
+    color: white !important;
+}
 
 h1{
     font-family: 'Times New Roman', Times, serif;

@@ -5,11 +5,13 @@ import Navbar from "../../components/Navbar/Navbar";
 import "./Category.css";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
+import { useTheme } from "../../contexts/Theme";
 
 function CategoryRecipes() {
   const { categoryName } = useParams();
   const [recipes, setRecipes] = useState([]);
   const [categoryDescription, setCategoryDescription] = useState("");
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const fetchCategoryDetails = async () => {
@@ -37,7 +39,7 @@ function CategoryRecipes() {
   }, [categoryName]);
 
   return (
-    <div>
+    <div className={isDarkMode? "bg-dark text-light": " "}>
       <div className="position-relative">
         <Navbar />
       </div>
@@ -55,7 +57,7 @@ function CategoryRecipes() {
           {recipes.map((recipe) => (
             <div className="col-6 col-md-3 ">
               <Link to={`/recipes/${recipe.idMeal}`}>
-                <div className="card border-0 m-3 text-center">
+                <div className={isDarkMode? "card border-0 m-3 text-center bg-dark text-white":"card border-0 m-3 text-center"}>
                   <img
                     src={recipe.strMealThumb}
                     alt=""

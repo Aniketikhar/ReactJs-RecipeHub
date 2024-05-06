@@ -3,9 +3,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import { useTheme } from '../../contexts/Theme';
 
 const AllCategories = () => {
     const [categories, setCategories] = useState([]);
+    const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -23,12 +25,12 @@ const AllCategories = () => {
   }, []);
 
   return (
-    <div>
+    <div className={isDarkMode? "bg-dark" : " "}>
       <Navbar />
       <div className="header-category  container">
         <div className="category-content   ">
           <img src="/assets/pexels-ella-olsson-572949-1640774.jpg" className='img-fluid' alt="banner" />
-          <h2 className='mt-3'>
+          <h2 className={isDarkMode? 'mt-3 text-white': " mt-3"}>
            All Categories
           </h2>
           {/* <p>{categoryDescription}</p> */}
@@ -38,7 +40,7 @@ const AllCategories = () => {
         {
             categories.map((category) => (
               <Link to={`/categories/${category.strCategory}`}>
-                <div className="card border-0 text-center">
+                <div className={isDarkMode? "card border-0 text-center text-white bg-dark": " card border-0 text-center"}>
                   <img
                     src={category.strCategoryThumb}
                     alt=""

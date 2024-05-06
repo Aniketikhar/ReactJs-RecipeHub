@@ -4,16 +4,18 @@ import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
+import { useTheme } from "../../contexts/Theme";
 
 function Searches() {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const searchTerm = searchParams.get("query");
+  const { isDarkMode } = useTheme();
 
   // const [searchTerm, setSearchTerm] = useState('');
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
-  const [filteredCategories, setFilteredCategories] = useState([]);
+  // const [filteredCategories, setFilteredCategories] = useState([]);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -56,7 +58,7 @@ function Searches() {
   }, [recipes, categories, searchTerm]);
 
   return (
-    <div>
+    <div className={isDarkMode? "bg-dark text-white": " "}>
       <Navbar />
 
       <div className="container mx-auto">
