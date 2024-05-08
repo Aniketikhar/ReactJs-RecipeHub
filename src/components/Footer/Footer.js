@@ -25,12 +25,13 @@ const Footer = () => {
   return (
     <div className={isDarkMode? "footer-dark footer":"footer"}>
       <div className="row container mx-auto ">
-        <div className="col-5 p-3">
+        <div className="col-12 col-md-5 p-3">
           <div className="f-logo">
             <img
               src="/assets/RecipeHub_transparent.png"
               width={300}
               height={150}
+              className="mx-auto"
               alt="logo"
             />
           </div>
@@ -40,10 +41,10 @@ const Footer = () => {
             cook, create, and savor the flavors of life together!
           </p>
         </div>
-        <div className="col-7">
-          <div className="row p-5 mt-2">
-            <div className="col-4">
-              <h4>Categories</h4>
+        <div className="col-12 col-md-7">
+          <div className="row text-center text-md-start p-md-4 mt-md-5">
+            <div className="col-12 col-md-4">
+              <h5>Categories</h5>
               <ul>
                 {categories.map((category) => (
                   <Link className="link" to={`/categories/${category.strCategory}`}>
@@ -52,8 +53,8 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            <div className="col-4">
-              <h4>Legal</h4>
+            <div className="col-12 col-md-4">
+              <h5>Legal</h5>
               <ul>
                 <li>
                   <Link className="link" to={`/terms`}>Terms</Link>
@@ -67,8 +68,8 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="col-4">
-              <h4>Follow</h4>
+            <div className="col-12 mx-auto col-md-4">
+              <h5>Follow</h5>
               <ul>
                 <li>
                   <a className="link"
@@ -97,20 +98,20 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <div className="d-flex  justify-content-between px-5 mx-5">
+      <div className="d-flex  justify-content-between px-md-5 mx-md-5 ">
         <span className="link">&copy; Made By Aniket | All Rights Reserved</span>
-        <span>
+        <span className="me-2">
           <a className="link"
             href="https://www.linkedin.com/in/aniket-ikhar-119800294/"
             target="blank"
           >
-            <i className="fa-brands fa-linkedin p-3 fs-4"></i>
+            <i className="fa-brands fa-linkedin p-md-3 fs-6 fs-md-4"></i>
           </a>
           <a className="link" href="https://github.com/Aniketikhar" target="blank">
-            <i className="fa-brands fa-square-github p-3 fs-4"></i>
+            <i className="fa-brands fa-square-github p-1 p-md-3 fs fs-md-4"></i>
           </a>
           <a className="link" href="https://www.instagram.com/aniket_ikhar/" target="blank">
-            <i className="fa-brands fa-square-instagram p-3 fs-4"></i>
+            <i className="fa-brands fa-square-instagram p-md-3 fs-md-4"></i>
           </a>
         </span>
       </div>

@@ -50,7 +50,7 @@ function RecipeDetails() {
     <div className={isDarkMode? " bg-dark text-white" : " "}>
       <Navbar />
 
-      <div className="container my-5 details-recipe">
+      <div className="container my-md-5 details-recipe">
         {/* <div className="img-contain text-center">
          
         </div> */}
@@ -78,7 +78,7 @@ function RecipeDetails() {
         <hr />
 
         <div className=" row">
-          <div className="col-8">
+          <div className="col-12 col-md-8">
             <img
               src={recipe.strMealThumb}
               alt={recipe.strMeal}
@@ -86,7 +86,7 @@ function RecipeDetails() {
               className="recipe-thumb"
             />
           </div>
-          <div className="col-4">
+          <div className="col-12 col-md-4">
             <h3>Ingredients</h3>
             <ul type="none" style={{ paddingLeft: "0px" }}>
               {Ingredients.map((ingre) => {
@@ -102,7 +102,7 @@ function RecipeDetails() {
             </ul>
           </div>
         </div>
-        <div className=" m-5">
+        <div className=" m-md-5">
           <h3 className="mt-4">Instructions</h3>
           <div className="instruct-list">
             <ul>
@@ -115,8 +115,9 @@ function RecipeDetails() {
         </div>
         <iframe
           title="YouTube Video"
-          width="900"
-          height="500"
+          // width="900"
+          // height="500"
+          className="container mx-auto youtube-video"
           src={`https://www.youtube.com/embed/${
             recipe.strYoutube.split("=")[1]
           }`}

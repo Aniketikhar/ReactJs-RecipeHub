@@ -53,8 +53,8 @@ const Varieties = () => {
                   <img
                     src={recipe.strMealThumb}
                     alt=""
-                    className=""
-                    height={285}
+                    className="variety-thumb"
+                    
                   />
                   <div className="card-body p-0">
                     <p className="m-0">
@@ -89,8 +89,8 @@ const Varieties = () => {
                   <img
                     src={recipe.strMealThumb}
                     alt=""
-                    className=""
-                    height={285}
+                    className="variety-thumb"
+                    
                   />
                   <div className="card-body p-0">
                     <p className="m-0">

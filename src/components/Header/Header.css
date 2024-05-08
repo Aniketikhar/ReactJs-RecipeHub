@@ -2,14 +2,34 @@
 
 .header{
     background-color: #E3F1FF;
+    /* min-height: 60vh; */
+}
+
+.img-box {
+    background-image: url('/public/assets/header-img1.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
 }
 
 .heading {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
+    font-size: 1.5rem;
 }
 
 .header-dark {
     background-color: rgb(0, 0, 82) !important;
     color: white;
 }
+
+.content{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+ 

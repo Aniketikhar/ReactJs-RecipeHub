@@ -18,6 +18,8 @@ h1{
 
 .sub-form{
     background-color: white;
+    box-sizing: border-box;
+    width: 17rem;
 
 }
 .sub-form input[type="submit"] {
@@ -26,5 +28,5 @@ h1{
 }
 .sub-form input[type="email"] {
     border: none;
-    width: 78%;
+    width: auto;
 }

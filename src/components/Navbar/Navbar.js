@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={ isDarkMode? "navbar navbar-expand-md navbar-dark ":"navbar navbar-expand-md navbar-light"}>
+      <nav className={ isDarkMode? "navbar navbar-expand-lg navbar-dark ":"navbar navbar-expand-md navbar-light"}>
         {/* logo */}
         <div className="container">
           <a className="navbar-brand" href="/">
@@ -23,7 +23,8 @@ const Navbar = () => {
               src="/assets/RecipeHub_transparentwitouticon.png"
               alt="logo"
               height={70}
-              width={250}
+              width={200}
+             
             />
           </a>
 
@@ -49,7 +50,7 @@ const Navbar = () => {
                   className={isDarkMode? "search-input dark-mode":"search-input"}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="Find your favorite recipe"
+                  placeholder="Your favorite recipes"
                 />
                 <button onClick={handleSearch}>
                   <i className="fas fa-search text-warning" />

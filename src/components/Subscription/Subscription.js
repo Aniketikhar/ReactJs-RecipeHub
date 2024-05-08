@@ -9,7 +9,7 @@ const Subscription = () => {
       <h1 className=''>Deliciousness<br/> to your Inbox</h1>
       <p className=''>Enjoy weekly hand picked recipes and recommendations</p>
       
-      <form action="" className={isDarkMode? 'sub-form m-3 border w-25 mx-auto p-1 subscr-dark': "sub-form m-3 border w-25 mx-auto p-1"}>
+      <form action="" className={isDarkMode? 'sub-form my-3 border mx-auto  p-1 subscr-dark': "sub-form m-3 border w-50 mx-auto p-1"}>
         <input type="email" name="email" className={isDarkMode? "email bg-transparent placeholder-dark":"email bg-transparent"} placeholder='example@gmail.com' />
         <input type="submit" value="JOIN" className='text-white p-1 px-3' />
         </form>
