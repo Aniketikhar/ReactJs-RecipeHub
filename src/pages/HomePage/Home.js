@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Header from "../../components/Header/Header";
 import Subscription from "../../components/Subscription/Subscription";
@@ -11,6 +11,8 @@ import { useTheme } from "../../contexts/Theme";
 
 const Home = () => {
   const { isDarkMode } = useTheme();
+
+  window.scrollTo(0 , 0);
 
   return (
   <div className={ isDarkMode? "bg-dark" : " " }>

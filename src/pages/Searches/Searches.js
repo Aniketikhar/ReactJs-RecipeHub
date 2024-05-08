@@ -36,6 +36,7 @@ function Searches() {
       }
     };
 
+    window.scrollTo(0 , 0);
     fetchRecipes();
   }, [searchTerm]);
 

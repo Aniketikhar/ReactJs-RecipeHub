@@ -6,7 +6,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Varieties = () => {
-  const [recipeIds, setRecipeId] = useState([
+  const [recipeIds] = useState([
      52839, 52829,53015, 52894, 52897, 52989,
   ]);
   const [recipes, setRecipes] = useState([]);
@@ -29,7 +29,7 @@ const Varieties = () => {
     };
 
     fetchRecipes();
-  }, [recipeIds]);
+  }, [recipeIds, recipes]);
 
   const limit = 3;
   const { isDarkMode } = useTheme();

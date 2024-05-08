@@ -35,6 +35,7 @@ function CategoryRecipes() {
       }
     };
 
+    window.scrollTo(0 , 0);
     fetchCategoryDetails();
   }, [categoryName]);
 

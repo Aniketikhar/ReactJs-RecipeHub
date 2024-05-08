@@ -21,6 +21,8 @@ const AllCategories = () => {
       }
     };
 
+
+    window.scrollTo(0 , 0);
     fetchCategories();
   }, []);
 
