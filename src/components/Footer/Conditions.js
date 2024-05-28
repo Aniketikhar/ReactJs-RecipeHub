@@ -1,10 +1,13 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "./Footer";
+import { useTheme } from "../../contexts/Theme";
 
 const Conditions = () => {
+  const { isDarkMode } = useTheme();
+
   return (
-    <div>
+    <div className={isDarkMode? "bg-dark text-light":""} >
       <Navbar />
       <div className="container p-5">
         <h3>Conditions of Use</h3>
