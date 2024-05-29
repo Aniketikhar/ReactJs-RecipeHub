@@ -4,10 +4,19 @@ A recipe site built with React that allows users to search for recipes and categ
 
 ## Features
 
-- Search for recipes by name
-- View recipe details, including ingredients, steps, and a YouTube video (if available)
-- Toggle between light and dark themes using a checkbox
-- Responsive design
+- **Guided Tour:** Introduces users to key features and navigation using Shepherd.js.
+- **Light and Dark Theme:** Toggle between light and dark themes for a personalized experience.
+- **Recipe Search:** Easily search for recipes using the search bar.
+- **Recipe Categories:** Browse recipes by categories such as Desserts, Main Courses, Appetizers, and more.
+- **Popular Categories:** Highlighted popular categories for quick access.
+- **Recipe Details:** Detailed view of each recipe with ingredients and instructions.
+
+App is Live Here
+
+
+## App Preview ScreenShots:
+
+    home page : public\assets\first-img.png
 
 ## Getting Started
 
@@ -22,7 +31,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/recipe-site.git
+    git clone https://github.com/Aniketikhar/ReactJs-RecipeHub.git
     cd recipe-site
     ```
 
