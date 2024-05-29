@@ -6,11 +6,45 @@ import "./RecipeDetails.css";
 import Footer from "../../components/Footer/Footer";
 import { useTheme } from "../../contexts/Theme";
 
+
+import Shepherd from "shepherd.js";
+import "../../shepherd.css";
+
 function RecipeDetails() {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState(null);
   const Ingredients = [];
   const { isDarkMode } = useTheme();
+
+  useEffect(() => {
+      const tour = new Shepherd.Tour({
+        defaultStepOptions: {
+          cancelIcon: {
+            enabled: true,
+          },
+          classes: "shepherd-theme-arrows",
+          scrollTo: { behavior: "smooth", block: "center" },
+        },
+      });
+  
+      tour.addStep({
+        id: "step-1",
+        text: "Here, you'll find all the information you need to recreate this delicious dish. Scroll down to see the ingredients and instructions, and don't forget to check any additional notes or tips provided. Get ready to unleash your inner chef and enjoy cooking!",
+        attachTo: {
+          element: "",
+          on: "center",
+        },
+        buttons: [
+          {
+            text: "Exit",
+            action: tour.complete,
+          }
+          
+        ],
+      });
+  
+      tour.start();
+    }, []);
 
   useEffect(() => {
     const fetchRecipeDetails = async () => {
@@ -113,11 +147,12 @@ function RecipeDetails() {
             </ul>
           </div>
         </div>
+        <div className="container youtube-video">
         <iframe
           title="YouTube Video"
           // width="900"
           // height="500"
-          className="container mx-auto youtube-video"
+          className="h-100 w-100"
           src={`https://www.youtube.com/embed/${
             recipe.strYoutube.split("=")[1]
           }`}
@@ -125,6 +160,7 @@ function RecipeDetails() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
+        </div>
       </div>
       <Footer />
     </div>

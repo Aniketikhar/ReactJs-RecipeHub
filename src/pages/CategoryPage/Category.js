@@ -7,11 +7,16 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import { useTheme } from "../../contexts/Theme";
 
+import Shepherd from "shepherd.js";
+import "../../shepherd.css";
+
 function CategoryRecipes() {
   const { categoryName } = useParams();
   const [recipes, setRecipes] = useState([]);
   const [categoryDescription, setCategoryDescription] = useState("");
   const { isDarkMode } = useTheme();
+
+  
 
   useEffect(() => {
     const fetchCategoryDetails = async () => {
@@ -35,18 +40,51 @@ function CategoryRecipes() {
       }
     };
 
-    window.scrollTo(0 , 0);
+    window.scrollTo(0, 0);
     fetchCategoryDetails();
-  }, [categoryName]);
+
+    const tour = new Shepherd.Tour({
+      defaultStepOptions: {
+        cancelIcon: {
+          enabled: true,
+        },
+        classes: "shepherd-theme-arrows",
+        scrollTo: { behavior: "smooth", block: "center" },
+      },
+    });
+
+    tour.addStep({
+      id: "step-1",
+      text: "Here, you'll find a collection of delicious recipes tailored to your taste. Scroll through the list to discover mouthwatering dishes, and click on any recipe to view its details. Whether you're craving comfort food or looking for a new culinary adventure, you're sure to find inspiration here!",
+      attachTo: {
+        element: "",
+        on: "center",
+      },
+      buttons: [
+        {
+          text: "Exit",
+          action: tour.complete,
+        }
+        
+      ],
+    });
+
+    tour.start();
+
+  }, [], [categoryName]);
 
   return (
-    <div className={isDarkMode? "bg-dark text-light": " "}>
+    <div className={isDarkMode ? "bg-dark text-light" : " "}>
       <div className="position-relative">
         <Navbar />
       </div>
       <div className="header-category container ">
         <div className="category-content  ">
-        <img src="/assets/pexels-ella-olsson-572949-1640774.jpg" className='img-fluid' alt="banner" />
+          <img
+            src="/assets/pexels-ella-olsson-572949-1640774.jpg"
+            className="img-fluid"
+            alt="banner"
+          />
           <h2 className="mt-3">
             {categoryName} ({recipes.length} recipes)
           </h2>
@@ -58,7 +96,13 @@ function CategoryRecipes() {
           {recipes.map((recipe) => (
             <div className="col-6 col-md-3 ">
               <Link to={`/recipes/${recipe.idMeal}`}>
-                <div className={isDarkMode? "card border-0 m-3 text-center bg-dark text-white":"card border-0 m-3 text-center"}>
+                <div
+                  className={
+                    isDarkMode
+                      ? "card border-0 m-3 text-center bg-dark text-white"
+                      : "card border-0 m-3 text-center"
+                  }
+                >
                   <img
                     src={recipe.strMealThumb}
                     alt=""

@@ -68,11 +68,11 @@ const Navbar = () => {
               <a className="nav-link active mx-2" aria-current="page" href="/">
                 Home
               </a>
-              <a className="nav-link mx-2" href="/categories">
+              <a className="nav-link mx-2 all-cate" href="/categories">
                 Categories
               </a>
               <a
-                className="nav-link mx-2"
+                className="nav-link mx-2 about"
                 href="https://www.linkedin.com/in/aniket-ikhar-119800294/"
                 target="blank"
               >

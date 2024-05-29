@@ -27,7 +27,7 @@ const Categories = () => {
     <div>
       <div className="sup-del container mb-5">
         <h2 className={isDarkMode? "text-white": "heroes"}>Popular Categories</h2>
-        <div className="row mt-4 g-3 g-md-1">
+        <div className="row mt-4 g-3 g-md-1 cate">
           {categories.map((category) => (
             <div className="col-6 col-md-4  col-md-2 ">
               <Link to={`/categories/${category.strCategory}`}>

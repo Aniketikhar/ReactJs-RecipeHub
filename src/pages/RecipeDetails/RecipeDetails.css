@@ -81,17 +81,22 @@
     line-height: 38px;
 }
 
+.youtube-video{
+    width: 80%;
+    height: 50vh;
+}
+
 @media (max-width: 770px) {
     .details-recipe{
 
         max-width: 100%;
     
     }
-    .youtube-video{
+    /* .youtube-video{
         height: 12em;
         width: 24em;
         padding: 0;
-    }
+    } */
 
     .data{
         width: 100%;

@@ -5,6 +5,9 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import { useTheme } from "../../contexts/Theme";
 
+import Shepherd from 'shepherd.js';
+import '../../shepherd.css';
+
 const AllCategories = () => {
   const [categories, setCategories] = useState([]);
   const { isDarkMode } = useTheme();
@@ -24,6 +27,36 @@ const AllCategories = () => {
 
     window.scrollTo(0 , 0);
     fetchCategories();
+
+
+    const tour = new Shepherd.Tour({
+      defaultStepOptions: {
+        cancelIcon: {
+          enabled: true,
+        },
+        classes: "shepherd-theme-arrows",
+        scrollTo: { behavior: "smooth", block: "center" },
+      },
+    });
+
+    tour.addStep({
+      id: "step-1",
+      text: "Explore our diverse categories to find a recipe that suits your taste! Click on any category to see all related recipes.",
+      attachTo: {
+        element: "",
+        on: "center",
+      },
+      buttons: [
+        {
+          text: "Exit",
+          action: tour.complete,
+        }
+        
+      ],
+    });
+
+    tour.start();
+
   }, []);
 
   return (
