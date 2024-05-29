@@ -15,7 +15,15 @@ A recipe site built with React that allows users to search for recipes and categ
 
 
 ## App Preview ScreenShots:
-    ![first-img](https://github.com/Aniketikhar/ReactJs-RecipeHub/assets/96694643/2e823817-fcee-487c-8716-3f2066794949)
+    
+![first-img](https://github.com/Aniketikhar/ReactJs-RecipeHub/assets/96694643/01a5cc2d-a204-4f00-bb86-8ff261861239)
+![second-img](https://github.com/Aniketikhar/ReactJs-RecipeHub/assets/96694643/d2c20073-7bbe-4cd1-b314-e8e7288e262b)
+![third-img](https://github.com/Aniketikhar/ReactJs-RecipeHub/assets/96694643/f154070c-c3c8-419f-811b-689c5edcc569)
+![fourth-img](https://github.com/Aniketikhar/ReactJs-RecipeHub/assets/96694643/0aeffe05-791e-45b5-9a86-073225d4b10e)
+![fifth-img](https://github.com/Aniketikhar/ReactJs-RecipeHub/assets/96694643/412fe212-2bc6-4b4f-939e-39e8f5449311)
+
+## App preview Video:
+![video](https://youtu.be/Kqq8rP1zQ0w?si=jXW2-9s_ZKns8Rpj)
 
     
 
