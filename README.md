@@ -11,12 +11,13 @@ A recipe site built with React that allows users to search for recipes and categ
 - **Popular Categories:** Highlighted popular categories for quick access.
 - **Recipe Details:** Detailed view of each recipe with ingredients and instructions.
 
-App is Live Here
+### App is Live Here
 
 
 ## App Preview ScreenShots:
+    ![first-img](https://github.com/Aniketikhar/ReactJs-RecipeHub/assets/96694643/2e823817-fcee-487c-8716-3f2066794949)
 
-    home page : public\assets\first-img.png
+    
 
 ## Getting Started
 
