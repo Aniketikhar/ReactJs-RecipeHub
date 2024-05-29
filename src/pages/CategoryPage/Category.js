@@ -71,7 +71,7 @@ function CategoryRecipes() {
 
     tour.start();
 
-  }, [], [categoryName]);
+  }, [categoryName]);
 
   return (
     <div className={isDarkMode ? "bg-dark text-light" : " "}>
