@@ -43,34 +43,6 @@ function CategoryRecipes() {
     window.scrollTo(0, 0);
     fetchCategoryDetails();
 
-    const tour = new Shepherd.Tour({
-      defaultStepOptions: {
-        cancelIcon: {
-          enabled: true,
-        },
-        classes: "shepherd-theme-arrows",
-        scrollTo: { behavior: "smooth", block: "center" },
-      },
-    });
-
-    tour.addStep({
-      id: "step-1",
-      text: "Here, you'll find a collection of delicious recipes tailored to your taste. Scroll through the list to discover mouthwatering dishes, and click on any recipe to view its details. Whether you're craving comfort food or looking for a new culinary adventure, you're sure to find inspiration here!",
-      attachTo: {
-        element: "",
-        on: "center",
-      },
-      buttons: [
-        {
-          text: "Exit",
-          action: tour.complete,
-        }
-        
-      ],
-    });
-
-    tour.start();
-
   }, [categoryName]);
 
   return (

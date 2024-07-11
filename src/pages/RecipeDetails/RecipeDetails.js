@@ -15,36 +15,7 @@ function RecipeDetails() {
   const [recipe, setRecipe] = useState(null);
   const Ingredients = [];
   const { isDarkMode } = useTheme();
-
-  useEffect(() => {
-      const tour = new Shepherd.Tour({
-        defaultStepOptions: {
-          cancelIcon: {
-            enabled: true,
-          },
-          classes: "shepherd-theme-arrows",
-          scrollTo: { behavior: "smooth", block: "center" },
-        },
-      });
-  
-      tour.addStep({
-        id: "step-1",
-        text: "Here, you'll find all the information you need to recreate this delicious dish. Scroll down to see the ingredients and instructions, and don't forget to check any additional notes or tips provided. Get ready to unleash your inner chef and enjoy cooking!",
-        attachTo: {
-          element: "",
-          on: "center",
-        },
-        buttons: [
-          {
-            text: "Exit",
-            action: tour.complete,
-          }
-          
-        ],
-      });
-  
-      tour.start();
-    }, []);
+      
 
   useEffect(() => {
     const fetchRecipeDetails = async () => {
