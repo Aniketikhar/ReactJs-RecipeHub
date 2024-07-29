@@ -13,6 +13,8 @@ A recipe site built with React that allows users to search for recipes and categ
 
 ### App is Live Here
 
+https://recipehub-nine.vercel.app/
+
 
 ## App Preview ScreenShots:
     
@@ -53,7 +55,11 @@ Follow these instructions to get a copy of the project up and running on your lo
     npm install
     ```
 
-3. Start the development server:
+3. If you encounter an npm install error, use the following command: 
+    ```sh
+    npm install --legacy-peer-deps
+    ```
+4. Start the development server:
     ```sh
     npm start
     ```
