@@ -11,7 +11,6 @@ import { useTheme } from "../../contexts/Theme";
 
 const Home = () => {
   const { isDarkMode } = useTheme();
-
   window.scrollTo(0 , 0);
 
   return (

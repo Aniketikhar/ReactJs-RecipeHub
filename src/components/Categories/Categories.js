@@ -7,6 +7,7 @@ import { useTheme } from '../../contexts/Theme';
 const Categories = () => {
   const [categories, setCategories] = useState([]);
   const { isDarkMode } = useTheme();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -15,6 +16,7 @@ const Categories = () => {
           "https://www.themealdb.com/api/json/v1/1/categories.php"
         );
         setCategories(response.data.categories.slice(2,8));
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching categories:", error.message);
       }
@@ -28,7 +30,15 @@ const Categories = () => {
       <div className="sup-del container mb-5">
         <h2 className={isDarkMode? "text-white": "heroes"}>Popular Categories</h2>
         <div className="row mt-4 g-3 g-md-1 cate">
-          {categories.map((category) => (
+          {
+            loading == true ? (
+              <div className="spinner">
+                <div className="spin"></div>
+              </div>
+            ) : 
+          
+          
+          categories.map((category) => (
             <div className="col-6 col-md-4  col-md-2 ">
               <Link to={`/categories/${category.strCategory}`}>
                 <div className={isDarkMode? "card border-0 text-center bg-dark text-white": "card border-0 text-center "}>

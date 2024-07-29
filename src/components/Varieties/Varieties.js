@@ -10,6 +10,7 @@ const Varieties = () => {
      52839, 52829,53015, 52894, 52897, 52989,
   ]);
   const [recipes, setRecipes] = useState([]);
+  const [loading , setLoading] = useState(true);
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -22,6 +23,7 @@ const Varieties = () => {
         });
         const fetchedRecipes = await Promise.all(promises);
         setRecipes(fetchedRecipes);
+        setLoading(false);
         console.log(recipes);
       } catch (error) {
         console.error("Error fetching recipes:", error);
@@ -40,7 +42,13 @@ const Varieties = () => {
           Super Delicious
         </h2>
         <div className="row mt-4">
-          {recipes.slice(0, limit).map((recipe) => (
+          {
+          loading == true ? (
+            <div className="spinner">
+              <div className="spin"></div>
+            </div>
+          ) :        
+          recipes.slice(0, limit).map((recipe) => (
             <div className="col-md-4">
               <Link to={`/recipes/${recipe.idMeal}`}>
                 <div

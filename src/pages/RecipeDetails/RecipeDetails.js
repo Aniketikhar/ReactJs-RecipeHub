@@ -15,6 +15,9 @@ function RecipeDetails() {
   const [recipe, setRecipe] = useState(null);
   const Ingredients = [];
   const { isDarkMode } = useTheme();
+  const [loading, setLoading] = useState(true);
+
+  console.log(recipeId);
       
 
   useEffect(() => {
@@ -24,6 +27,7 @@ function RecipeDetails() {
           `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`
         );
         setRecipe(response.data.meals[0]);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching recipe details:", error.message);
       }
@@ -34,17 +38,20 @@ function RecipeDetails() {
     fetchRecipeDetails();
   }, [recipeId]);
 
-  if (!recipe) {
-    return <div>Loading...</div>;
-  }
+  
 
-  const steps = recipe.strInstructions
+  const steps = recipe?.strInstructions
     .split("\r\n")
     .filter((step) => step.trim() !== "");
 
-  for (let i = 0; i < 20; i++) {
-    let ingredient = recipe[`strIngredient${i}`];
-    let measure = recipe[`strMeasure${i}`];
+  for (let i = 1; i < 20; i++) {
+    let ingredient;
+    let measure;
+
+    if(recipe){
+      ingredient = recipe[`strIngredient${i}`];
+      measure = recipe[`strMeasure${i}`];
+    }
 
     if (ingredient && measure) {
       Ingredients.push({ ingredient, measure });
@@ -54,6 +61,12 @@ function RecipeDetails() {
   return (
     <div className={isDarkMode? " bg-dark text-white" : " "}>
       <Navbar />
+      {
+        loading == true ? (
+          <div className="spinner">
+            <div className="spin"></div>
+          </div>
+        ) : 
 
       <div className="container my-md-5 details-recipe">
         {/* <div className="img-contain text-center">
@@ -94,7 +107,7 @@ function RecipeDetails() {
           <div className="col-12 col-md-4">
             <h3>Ingredients</h3>
             <ul type="none" style={{ paddingLeft: "0px" }}>
-              {Ingredients.map((ingre) => {
+              {Ingredients?.map((ingre) => {
                 return (
                   <>
                     <li>
@@ -133,6 +146,7 @@ function RecipeDetails() {
         ></iframe>
         </div>
       </div>
+}
       <Footer />
     </div>
   );

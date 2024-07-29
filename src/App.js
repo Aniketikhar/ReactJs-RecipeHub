@@ -8,6 +8,7 @@ import Searches from './pages/Searches/Searches';
 import Terms from './components/Footer/Terms';
 import Conditions from './components/Footer/Conditions';
 import Copyright from './components/Footer/Copyright';
+import './App.css';
 
 const App = () => {
   return (
